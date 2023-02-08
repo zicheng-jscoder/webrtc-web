@@ -42,6 +42,7 @@ function resolvedServerOptions(env) {
     [env.VITE_PROXY_KEY as string]: {
       target: env.VITE_BASE_API_URL,
       changeOrigin: true,
+      ws: true,
       rewrite: (path) => path.replace(env.VITE_PROXY_KEY, ''),
     },
   }

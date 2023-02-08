@@ -5,11 +5,15 @@
 </template>
 
 <script lang="ts" setup>
+  import { initSocket } from '@/utils/socket'
   import { Toast } from 'vant'
   import { onMounted, ref } from 'vue'
 
   onMounted(() => {
-    init()
+    // init()
+    initSocket().then((res) => {
+      console.log(res)
+    })
   })
 
   function init() {
